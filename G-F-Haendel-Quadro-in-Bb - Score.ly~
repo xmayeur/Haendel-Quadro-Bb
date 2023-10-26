@@ -1,0 +1,73 @@
+\version "2.24.2"
+
+\header {
+  title = "Quadro in Bb"
+  subtitle = "for Violino Primo, flauto ô Oboe, Violino Secondo, Viola Obligato e Basso Continuo"
+  composer = "G-F Haendel"
+  arranger = "Arr. X. Mayeur"
+  copyright = "Les Éditions du Héron Mélomane 2023"
+}
+
+\paper {
+  #(set-paper-size "a4")
+}
+
+global = {
+  \key bes \major
+  \numericTimeSignature
+  \time 2/2
+}
+
+flute = \relative c'' {
+  \global
+  % En avant la musique.
+
+}
+
+violin = \relative c'' {
+  \global
+  % En avant la musique.
+
+}
+
+viola = \relative c' {
+  \global
+  % En avant la musique.
+
+}
+
+figBass = \figuremode {
+  \global
+  % Ajouter des chiffrages ici.
+
+}
+
+flutePart = \new Staff \with {
+  instrumentName = "Flûte"
+  midiInstrument = "flute"
+} \flute
+
+violinPart = \new Staff \with {
+  instrumentName = "Violon"
+  midiInstrument = "violin"
+} \violin
+
+violaPart = \new Staff \with {
+  instrumentName = "Alto"
+  midiInstrument = "viola"
+} { \clef alto \viola }
+
+bassFiguresPart = \new FiguredBass \figBass
+
+\score {
+  <<
+    \flutePart
+    \violinPart
+    \violaPart
+    \bassFiguresPart
+  >>
+  \layout { }
+  \midi {
+    \tempo 4=100
+  }
+}
