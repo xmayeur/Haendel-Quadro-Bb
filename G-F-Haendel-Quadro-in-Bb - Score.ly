@@ -9,6 +9,9 @@
 }
 
 \paper {
+  property-defaults.fonts.serif = "Wyld"
+  property-defaults.fonts.sans = "Wyldi"
+  property-defaults.fonts.typewriter = "Wyld"
   #(set-paper-size "a4")
 }
 
@@ -38,7 +41,6 @@ viola = \relative c' {
 \include "continuo.ily"
 
 
-
 flutePart = \new Staff \with {
   instrumentName = "Flûte"
   midiInstrument = "flute"
@@ -55,7 +57,7 @@ violaPart = \new Staff \with {
 } { \clef alto \viola }
 
 celloPart = \new Staff \with {
-  instrumentName = "BC"
+  instrumentName = "Ba"
   midiInstrument = "violoncello"
 } {\clef bass \cello}
 

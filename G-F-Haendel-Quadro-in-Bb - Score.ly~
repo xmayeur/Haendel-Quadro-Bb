@@ -2,7 +2,7 @@
 
 \header {
   title = "Quadro in Bb"
-  subtitle = "for Violino Primo, flauto ô Oboe, Violino Secondo, Viola Obligato e Basso Continuo"
+  subtitle = "for Violino Primo, Flauto ô Oboe, Violino Secondo, Viola Obligato e Basso Continuo"
   composer = "G-F Haendel"
   arranger = "Arr. X. Mayeur"
   copyright = "Les Éditions du Héron Mélomane 2023"
@@ -14,7 +14,6 @@
 
 global = {
   \key bes \major
-  \numericTimeSignature
   \time 2/2
 }
 
@@ -36,11 +35,9 @@ viola = \relative c' {
 
 }
 
-figBass = \figuremode {
-  \global
-  % Ajouter des chiffrages ici.
+\include "continuo.ily"
 
-}
+
 
 flutePart = \new Staff \with {
   instrumentName = "Flûte"
@@ -57,6 +54,11 @@ violaPart = \new Staff \with {
   midiInstrument = "viola"
 } { \clef alto \viola }
 
+celloPart = \new Staff \with {
+  instrumentName = "BC"
+  midiInstrument = "violoncello"
+} {\clef bass \cello}
+
 bassFiguresPart = \new FiguredBass \figBass
 
 \score {
@@ -64,6 +66,7 @@ bassFiguresPart = \new FiguredBass \figBass
     \flutePart
     \violinPart
     \violaPart
+    \celloPart
     \bassFiguresPart
   >>
   \layout { }
