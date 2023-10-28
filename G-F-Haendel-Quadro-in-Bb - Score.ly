@@ -36,6 +36,7 @@ viola = \relative c' {
 \include "continuo_largo.ily"
 \include "flauto_largo.ily"
 \include "violin_largo.ily"
+\include "viola_largo.ily"
 
 flutePart = \new Staff \with {
   instrumentName = "Traverso"
@@ -48,9 +49,9 @@ violinPart = \new Staff \with {
 } \violin_largo
 
 violaPart = \new Staff \with {
-  instrumentName = "Alto"
+  instrumentName = "Viola"
   midiInstrument = "viola"
-} { \clef alto \viola }
+} { \clef alto \viola_largo }
 
 celloPart = \new Staff \with {
   instrumentName = "Basso"

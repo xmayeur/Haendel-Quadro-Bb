@@ -1,9 +1,9 @@
 \version "2.24.2"
 
 \header {
-  title = "Quadro in Bb"
+  title = \markup{ \fontsize #8 "Quadro in Bb"}
   subtitle = "for Violino Primo, Flauto o Oboe, Violino Secondo, Viola Obligato e Basso Continuo"
-  composer = "G-F Haendel"
+  composer = \markup { \fontsize # 5 "G-F Haendel"}
   arranger = "Tran{cr. X. Mayeur"
   copyright = "Le{ Edition{ du Heron Melomane 2023"
 }
@@ -26,17 +26,6 @@ global = {
   \key bes \major
 }
 
-flute = \relative c'' {
-  \global
-  % En avant la musique.
-
-}
-
-violin = \relative c'' {
-  \global
-  % En avant la musique.
-
-}
 
 viola = \relative c' {
   \global
@@ -47,6 +36,7 @@ viola = \relative c' {
 \include "continuo_largo.ily"
 \include "flauto_largo.ily"
 \include "violin_largo.ily"
+\include "alto_largo.ily"
 
 flutePart = \new Staff \with {
   instrumentName = "Traverso"
@@ -61,7 +51,7 @@ violinPart = \new Staff \with {
 violaPart = \new Staff \with {
   instrumentName = "Alto"
   midiInstrument = "viola"
-} { \clef alto \viola }
+} { \clef alto_largo \viola }
 
 celloPart = \new Staff \with {
   instrumentName = "Basso"
@@ -71,11 +61,10 @@ celloPart = \new Staff \with {
 bassFiguresPart = \new FiguredBass \figBass_largo
 
 \score {
-
+  \header {
+    piece = \markup {  \fontsize #7 "Largo"}
+  }
   <<
-    \header {
-      title = "Largo"
-    }
     \flutePart
     \violinPart
     \violaPart
