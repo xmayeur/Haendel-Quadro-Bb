@@ -6,7 +6,7 @@
 
     \vspace #3
     \line {\abs-fontsize   #28 "G-F Händel"} \vspace #1
-    \line {\abs-fontsize   #35  "Sonate in Bb"}
+    \line {\abs-fontsize   #35  "Sonate en Bb"}
     \vspace #1
     \line {\abs-fontsize #12  "pour flûte, violon ou hautbois, "}
     \line {\abs-fontsize #12  "violon, viole obligée et basse continue"}
@@ -26,7 +26,7 @@
         \normal-size-sub \normal-size-sub \epsfile #Y #7 #"/Users/xavier/Documents/Scores/XMA.eps"
       }
     }
-    \line { \override #'(font-name ."Arial" ) \tiny "Copy allowed for non-commercial use"}
+    \line { \override #'(font-name ."Arial" ) \tiny "Copy allowed for non-commercial use - heron.melomane@mayeur.be"}
     \vspace #3
   }
 }
