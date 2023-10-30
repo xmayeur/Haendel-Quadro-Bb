@@ -1,0 +1,32 @@
+\version "2.24.2"
+
+
+\markup  \fill-line \rounded-box \pad-x #30  {
+  \center-column {
+
+    \vspace #3
+    \line {\abs-fontsize   #28 "G-F Händel"} \vspace #1
+    \line {\abs-fontsize   #35  "Sonate in Bb"}
+    \vspace #1
+    \line {\abs-fontsize #12  "pour flûte, violon ou hautbois, "}
+    \line {\abs-fontsize #12  "violon, viole obligée et basse continue"}
+    \vspace #1
+
+    \box \epsfile #Y #70 #"cover.eps"
+
+
+    \vspace #13
+
+
+    \line {
+      {
+        \override #'(font-name ."Arial" )  "©  "
+        \override #'(font-name . "Snell Roundhand" )
+        \fontsize #2 {"Les Éditions du Héron Mélomane 2023"} \hspace #5
+        \normal-size-sub \normal-size-sub \epsfile #Y #7 #"/Users/xavier/Documents/Scores/XMA.eps"
+      }
+    }
+    \line { \override #'(font-name ."Arial" ) \tiny "Copy allowed for non-commercial use"}
+    \vspace #3
+  }
+}
