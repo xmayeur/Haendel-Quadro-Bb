@@ -21,6 +21,7 @@ global = {
 \include "flauto_largo.ily"
 \include "flauto_allegro.ily"
 \include "flauto_adagio.ily"
+\include "flauto_allegro_final.ily"
 
 
 fluteLargo = \new Staff \with {
@@ -35,21 +36,27 @@ fluteAllegro = \new Staff \with {
 } \flauto_allegro
 
 
-
 fluteAdagio = \new Staff \with {
   instrumentName = "Traverso"
   midiInstrument = "flute"
 } \flauto_adagio
 
+
+fluteAllegroFinal = \new Staff \with {
+  instrumentName = "Traverso"
+  midiInstrument = "flute"
+} \flauto_allegro_final
+
 \book {
   \bookpart {
-
+    \include "../../copyright.ily"
     \header {
       title = \markup{ \fontsize #8 "Quadro in Bb"}
       subtitle = "for Violino Primo, Flauto o Oboe, Violino Secondo, Viola Obligato e Basso Continuo"
       composer = \markup { \fontsize # 5 "G-F Haendel"}
       arranger = "Tran{cr. X. Mayeur"
-      copyright = "Le{ Edition{ du Heron Melomane 2023"
+      instrument = "FLAUTO TRAVERSO"
+
     }
     \score {
       \header {
@@ -89,5 +96,17 @@ fluteAdagio = \new Staff \with {
         \tempo 2 = 60
       }
     }
+
+    \score {
+      \header {
+        piece = \markup {  \fontsize #7 "Allegro"}
+      }
+      \fluteAllegroFinal
+      \layout { }
+      \midi {
+        \tempo 8 = 120
+      }
+    }
+
   }
 }
