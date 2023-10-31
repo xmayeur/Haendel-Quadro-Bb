@@ -1,12 +1,5 @@
 \version "2.24.2"
 
-\header {
-  title = \markup{ \fontsize #8 "Quadro in Bb"}
-  subtitle = "for Violino Primo, Flauto o Oboe, Violino Secondo, Viola Obligato e Basso Continuo"
-  composer = \markup { \fontsize # 5 "G-F Haendel"}
-  arranger = "Tran{cr. X. Mayeur"
-  copyright = "Le{ Edition{ du Heron Melomane 2023"
-}
 
 \paper {
   #(set-paper-size "a4")
@@ -26,25 +19,75 @@ global = {
 
 
 \include "flauto_largo.ily"
+\include "flauto_allegro.ily"
+\include "flauto_adagio.ily"
 
 
-flutePart = \new Staff \with {
+fluteLargo = \new Staff \with {
   instrumentName = "Traverso"
   midiInstrument = "flute"
 } \flauto_largo
 
 
+fluteAllegro = \new Staff \with {
+  instrumentName = "Traverso"
+  midiInstrument = "flute"
+} \flauto_allegro
 
-\score {
-  \header {
-    piece = \markup {  \fontsize #7 "Largo"}
+
+
+fluteAdagio = \new Staff \with {
+  instrumentName = "Traverso"
+  midiInstrument = "flute"
+} \flauto_adagio
+
+\book {
+  \bookpart {
+
+    \header {
+      title = \markup{ \fontsize #8 "Quadro in Bb"}
+      subtitle = "for Violino Primo, Flauto o Oboe, Violino Secondo, Viola Obligato e Basso Continuo"
+      composer = \markup { \fontsize # 5 "G-F Haendel"}
+      arranger = "Tran{cr. X. Mayeur"
+      copyright = "Le{ Edition{ du Heron Melomane 2023"
+    }
+    \score {
+      \header {
+        piece = \markup {  \fontsize #7 "Largo"}
+      }
+      \fluteLargo
+
+      \layout { }
+      \midi {
+        \tempo 4=50
+      }
+    }
+
+    \score {
+      \header {
+        piece = \markup {  \fontsize #7 "Allegro Fugato"}
+      }
+      \fluteAllegro
+
+      \layout { }
+      \midi {
+        \tempo 4=120
+      }
+    }
   }
 
-  \flutePart
+  \bookpart {
 
+    \score {
+      \header {
+        piece = \markup {  \fontsize #7 "Adagio"}
+      }
+      \fluteAdagio
 
-  \layout { }
-  \midi {
-    \tempo 4=50
+      \layout { }
+      \midi {
+        \tempo 2 = 60
+      }
+    }
   }
 }

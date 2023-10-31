@@ -4,12 +4,27 @@ global = {
   \key bes \major
 }
 
+\paper {
+  #(set-paper-size "a4")
+  #(define fonts
+     (set-global-fonts
+      #:roman "18thCentury"
+      #:sans "18thCentury"
+      #:typewriter "18thCentury"
+      #:factor (/ staff-height pt 20)
+      ))
 
+}
+
+% ALL PARTS FILES TO BE INCLUDED
 \include "continuo_largo.ily"
 \include "flauto_largo.ily"
 \include "violin_largo.ily"
 \include "viola_largo.ily"
 
+% ALL STAFF DEFINITIONS
+
+% LARGO
 flutePart = \new Staff \with {
   instrumentName = "Traverso"
   midiInstrument = "flute"
@@ -33,12 +48,23 @@ celloPart = \new Staff \with {
 bassFiguresPart = \new FiguredBass \figBass_largo
 
 
+% ALLEGRO FUGATO
 
+% ..
+
+
+%..
+
+
+
+% BOOK COMPOSITION
 \book {
+
+  % COVER PAGE
   \bookpart {
     \include "cover.ily"
   }
-
+  % SCORE HEADER
   \bookpart {
     \include "../../copyright.ily"
 
@@ -47,20 +73,7 @@ bassFiguresPart = \new FiguredBass \figBass_largo
       subtitle = "for Violino Primo, Flauto o Oboe, Violino Secondo, Viola Obligato e Basso Continuo"
       composer = \markup { \fontsize # 5 "G-F Haendel"}
     }
-
-    \paper {
-      #(set-paper-size "a4")
-      #(define fonts
-         (set-global-fonts
-          #:roman "18thCentury"
-          #:sans "18thCentury"
-          #:typewriter "18thCentury"
-          #:factor (/ staff-height pt 20)
-          ))
-
-    }
-
-
+    % LARGO PART
     \score {
       \header {
         piece = \markup {  \fontsize #7 "Largo"}
