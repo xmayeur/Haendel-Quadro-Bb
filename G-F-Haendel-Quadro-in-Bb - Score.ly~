@@ -4,51 +4,19 @@ global = {
   \key bes \major
 }
 
-\paper {
-  #(set-paper-size "a4")
-  #(define fonts
-     (set-global-fonts
-      #:roman "18thCentury"
-      #:sans "18thCentury"
-      #:typewriter "18thCentury"
-      #:factor (/ staff-height pt 20)
-      ))
 
-}
 
 % ALL PARTS FILES TO BE INCLUDED
+
+% LARGO
 \include "continuo_largo.ily"
 \include "flauto_largo.ily"
 \include "violin_largo.ily"
 \include "viola_largo.ily"
 
-% ALL STAFF DEFINITIONS
-
-% LARGO
-flutePart = \new Staff \with {
-  instrumentName = "Traverso"
-  midiInstrument = "flute"
-} \flauto_largo
-
-violinPart = \new Staff \with {
-  instrumentName = "Violino"
-  midiInstrument = "violin"
-} \violin_largo
-
-violaPart = \new Staff \with {
-  instrumentName = "Viola"
-  midiInstrument = "viola"
-} { \clef alto \viola_largo }
-
-celloPart = \new Staff \with {
-  instrumentName = "Basso"
-  midiInstrument = "cello"
-} {\clef bass \cello_largo}
-
-bassFiguresPart = \new FiguredBass \figBass_largo
-
-
 % ALLEGRO FUGATO
+\include "flauto_allegro.ily"
+\include "violin_allegro.ily"
 
 % ..
 
@@ -64,8 +32,20 @@ bassFiguresPart = \new FiguredBass \figBass_largo
   \bookpart {
     \include "cover.ily"
   }
-  % SCORE HEADER
+  % SCORE 	HEADER
   \bookpart {
+
+    \paper {
+      #(set-paper-size "a4")
+      #(define fonts
+         (set-global-fonts
+          #:roman "18thCentury"
+          #:sans "18thCentury"
+          #:typewriter "18thCentury"
+          #:factor (/ staff-height pt 20)
+          ))
+
+    }
     \include "../../copyright.ily"
 
     \header {
@@ -79,15 +59,56 @@ bassFiguresPart = \new FiguredBass \figBass_largo
         piece = \markup {  \fontsize #7 "Largo"}
       }
       <<
-        \flutePart
-        \violinPart
-        \violaPart
-        \celloPart
-        \bassFiguresPart
+        \new Staff \with {
+          instrumentName = "Traverso"
+          midiInstrument = "flute"
+        } \flauto_largo
+
+        \new Staff \with {
+          instrumentName = "Violino"
+          midiInstrument = "violin"
+        } \violin_largo
+
+        \new Staff \with {
+          instrumentName = "Viola"
+          midiInstrument = "viola"
+        } { \clef alto \viola_largo }
+
+        \new Staff \with {
+          instrumentName = "Basso"
+          midiInstrument = "cello"
+        } {\clef bass \cello_largo}
+
+        \new FiguredBass \figBass_largo
       >>
       \layout { }
       \midi {
         \tempo 4=50
+      }
+    }
+
+    % ALLEGRO FUGATO PART
+
+
+    \score {
+      \header {
+        piece = \markup {  \fontsize #7 "Allegro Fugato"}
+      }
+
+      <<
+        \new Staff \with {
+          instrumentName = "Traverso"
+          midiInstrument = "flute"
+        } \flauto_allegro
+
+        \new Staff \with {
+          instrumentName = "Violino"
+          midiInstrument = "violin"
+        } \violin_allegro
+      >>
+      \layout { }
+      \midi {
+        \tempo 4=120
       }
     }
   }

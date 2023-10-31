@@ -22,7 +22,7 @@
       {
         \override #'(font-name ."Arial" )  "©  "
         \override #'(font-name . "Snell Roundhand" )
-        \fontsize #2 {"Les Éditions du Héron Mélomane 2023"} \hspace #5
+        \fontsize #2 {"2023  Les Éditions du Héron Mélomane"} \hspace #5
         \normal-size-sub \normal-size-sub \epsfile #Y #7 #"/Users/xavier/Documents/Scores/XMA.eps"
       }
     }
