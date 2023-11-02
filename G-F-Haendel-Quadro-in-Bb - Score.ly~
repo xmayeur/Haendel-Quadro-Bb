@@ -5,7 +5,6 @@ global = {
 }
 
 
-
 % ALL PARTS FILES TO BE INCLUDED
 
 % LARGO
@@ -17,6 +16,7 @@ global = {
 % ALLEGRO FUGATO
 \include "flauto_allegro.ily"
 \include "violin_allegro.ily"
+\include "violin_adagio.ily"
 
 % ..
 

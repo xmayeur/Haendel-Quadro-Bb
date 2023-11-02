@@ -17,10 +17,12 @@ global = {
 \include "flauto_allegro.ily"
 \include "violin_allegro.ily"
 
-% ..
 
+% ADAGIO PART
+\include "flauto_adagio.ily"
+\include "violin_adagio.ily"
 
-%..
+%ALLEGRO (FINAL) PART
 
 
 
@@ -110,5 +112,31 @@ global = {
         \tempo 4=120
       }
     }
+
+    % ALLEGRO FUGATO PART
+
+
+    \score {
+      \header {
+        piece = \markup {  \fontsize #7 "Adagio"}
+      }
+
+      <<
+        \new Staff \with {
+          instrumentName = "Traverso"
+          midiInstrument = "flute"
+        } \flauto_adagio
+
+        \new Staff \with {
+          instrumentName = "Violino"
+          midiInstrument = "violin"
+        } \violin_adagio
+      >>
+      \layout { }
+      \midi {
+        \tempo 4=120
+      }
+    }
+
   }
 }

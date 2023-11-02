@@ -27,4 +27,4 @@ violin_allegro = \relative c'' {
 }
 
 
-\score { \new Staff \with {} \violon_allegro }
+% \score { \new Staff \with {} \violon_allegro }
