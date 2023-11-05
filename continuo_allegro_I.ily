@@ -1,29 +1,11 @@
 \version "2.24.2"
 
-% TO REMOVE WHEN DONE
-global = {
-  \key bes \major
-
-
-}
-\paper {
-  #(set-paper-size "a4")
-  #(define fonts
-     (set-global-fonts
-      #:roman "18thCentury"
-      #:sans "18thCentury"
-      #:typewriter "18thCentury"
-      #:factor (/ staff-height pt 20)
-      ))
-
-}
-
-
 cello_allegro =  \relative c' {
-  \global
+  \clef bass
+  \key bes \major
   \time 4/4
   r8 bes bes bes bes bes bes bes | c c f, [g16 a] bes8 bes, r8 bes' c c c c d c4 bes16 a| bes8 a4 g16 f bes8 bes, d bes |
-  g' f es d es4 r8 a|  bes f f f f f f g16 f| bes8 bes, r bes' a g f a | bes a c c, f [f16 g] a8 f|
+  g' f es d es4 r8 f8| g g g g a [f] r      a|  bes f f f f f f g16 f| bes8 bes, r bes' a g f a | bes a c c, f [f16 g] a8 f|
   e c r c f4 r | f8 g c,4\p f r| f8 g c,4 f8\f g a f| g g g a bes bes, bes'4~|
   bes a bes bes,| f' fis g8 g, es'4|  d d d d | d d g,\p es'| d d d d | d d g, r|
   g r g'8 g, g' a| b4. b8 c4 a8 b!| cis4. a8 d,4 r| d r d8 bes' a g | f bes a g f d f16 g a bes|
@@ -40,33 +22,18 @@ cello_allegro =  \relative c' {
 }
 
 figBass_allegro = \figuremode {
-  \global
+  \time 4/4
   % Ajouter des chiffrages ici.
-  <_>1*55 <_>4*3 <4>16< 7 3>16 <_>16*2<_>4*3 <6 4>16<7 5>16 <_>16*2 <_>4*3 <6 4>16<7 5>16
+  <_>1*56 <_>4*3 <4>16< 7 3>16 <_>16*2<_>4*3 <6 4>16<7 5>16 <_>16*2 <_>4*3 <6 4>16<7 5>16
 
 }
 
 
 
 % TO REMOVE WHEN DONE
-
-celloPart_allegro = \new Staff \with {
-  instrumentName = "Basse"
-  midiInstrument = "cello"
-} {\clef bass \cello_allegro}
-
-bassFiguresPart_allegro= \new FiguredBass \figBass_allegro
-
-
-\score {
-  \header { piece = "Allegro Fugato" }
-  <<
-
-    \celloPart_allegro
-    \bassFiguresPart_allegro
-  >>
-  \layout { }
-  \midi {
-    \tempo 4=140
-  }
-}
+%\score {
+% <<
+%  \new Staff \with {} \cello_allegro
+% \new FiguredBass \figBass_allegro
+%  >>
+%}

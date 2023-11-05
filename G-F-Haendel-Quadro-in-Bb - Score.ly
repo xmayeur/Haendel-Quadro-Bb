@@ -17,11 +17,14 @@ global = {
 \include "flauto_allegro.ily"
 \include "violin_allegro.ily"
 \include "viola_allegro.ily"
+\include "continuo_allegro_I.ily"
 
 
 % ADAGIO PART
 \include "flauto_adagio.ily"
 \include "violin_adagio.ily"
+\include  "viola_adagio.ily"
+\include "continuo_adagio.ily"
 
 %ALLEGRO (FINAL) PART
 
@@ -112,6 +115,15 @@ global = {
           instrumentName = "Viola"
           midiInstrument = "viola"
         } \viola_allegro
+
+        \new Staff \with {
+          instrumentName = "Basse"
+          midiInstrument = "cello"
+        } {\clef bass \cello_allegro}
+
+        \new FiguredBass \figBass_allegro
+
+
       >>
       \layout { }
       \midi {
@@ -138,8 +150,17 @@ global = {
           midiInstrument = "violin"
         } \violin_adagio
 
+        \new Staff \with {
+          instrumentName = "Viola"
+          midiInstrument = "viola"
+        } \viola_adagio
 
+        \new Staff \with {
+          instrumentName = "Basse"
+          midiInstrument = "cello"
+        } \continuo_adagio
 
+        \new FiguredBass \figBass_adagio
       >>
       \layout { }
       \midi {
