@@ -16,6 +16,7 @@ global = {
 % ALLEGRO FUGATO
 \include "flauto_allegro.ily"
 \include "violin_allegro.ily"
+\include "viola_allegro.ily"
 
 
 % ADAGIO PART
@@ -106,6 +107,11 @@ global = {
           instrumentName = "Violino"
           midiInstrument = "violin"
         } \violin_allegro
+
+        \new Staff \with {
+          instrumentName = "Viola"
+          midiInstrument = "viola"
+        } \viola_allegro
       >>
       \layout { }
       \midi {
@@ -113,7 +119,7 @@ global = {
       }
     }
 
-    % ALLEGRO FUGATO PART
+    % ADAGIO PART
 
 
     \score {
@@ -131,6 +137,9 @@ global = {
           instrumentName = "Violino"
           midiInstrument = "violin"
         } \violin_adagio
+
+
+
       >>
       \layout { }
       \midi {
