@@ -27,7 +27,8 @@ global = {
 \include "continuo_adagio.ily"
 
 %ALLEGRO (FINAL) PART
-
+\include "flauto_allegro_final.ily"
+\include "continuo_allegro_final.ily"
 
 
 % BOOK COMPOSITION
@@ -164,9 +165,43 @@ global = {
       >>
       \layout { }
       \midi {
+        \tempo 4=60
+      }
+    }
+
+
+    % ALLEGRO (final)
+
+    \score {
+      \header {
+        piece = \markup {  \fontsize #7 "Allegro"}
+      }
+
+      <<
+        \new Staff \with {
+          instrumentName = "Traverso"
+          midiInstrument = "flute"
+        } \flauto_allegro_final
+
+
+
+        \new Staff \with {
+          instrumentName = "Basse"
+          midiInstrument = "cello"
+        } \continuo_allegro_final
+
+        \new FiguredBass \figBass_allegro_final
+      >>
+      \layout { }
+      \midi {
         \tempo 4=120
       }
     }
 
+
   }
 }
+
+
+
+

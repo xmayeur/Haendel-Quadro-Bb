@@ -17,14 +17,17 @@ global = {
 \include "flauto_allegro.ily"
 \include "violin_allegro.ily"
 \include "viola_allegro.ily"
+\include "continuo_allegro_I.ily"
 
 
 % ADAGIO PART
 \include "flauto_adagio.ily"
 \include "violin_adagio.ily"
+\include  "viola_adagio.ily"
+\include "continuo_adagio.ily"
 
 %ALLEGRO (FINAL) PART
-
+\include "flauto_allegro_final.ily"
 
 
 % BOOK COMPOSITION
@@ -107,6 +110,20 @@ global = {
           instrumentName = "Violino"
           midiInstrument = "violin"
         } \violin_allegro
+
+        \new Staff \with {
+          instrumentName = "Viola"
+          midiInstrument = "viola"
+        } \viola_allegro
+
+        \new Staff \with {
+          instrumentName = "Basse"
+          midiInstrument = "cello"
+        } {\clef bass \cello_allegro}
+
+        \new FiguredBass \figBass_allegro
+
+
       >>
       \layout { }
       \midi {
@@ -114,7 +131,7 @@ global = {
       }
     }
 
-    % ALLEGRO FUGATO PART
+    % ADAGIO PART
 
 
     \score {
@@ -136,7 +153,34 @@ global = {
         \new Staff \with {
           instrumentName = "Viola"
           midiInstrument = "viola"
-        } \viola_allegro
+        } \viola_adagio
+
+        \new Staff \with {
+          instrumentName = "Basse"
+          midiInstrument = "cello"
+        } \continuo_adagio
+
+        \new FiguredBass \figBass_adagio
+      >>
+      \layout { }
+      \midi {
+        \tempo 4=60
+      }
+    }
+
+
+    % ALLEGRO (final)
+
+    \score {
+      \header {
+        piece = \markup {  \fontsize #7 "Allegro"}
+      }
+
+      <<
+        \new Staff \with {
+          instrumentName = "Traverso"
+          midiInstrument = "flute"
+        } \flauto_allegro_final
 
       >>
       \layout { }
@@ -145,5 +189,10 @@ global = {
       }
     }
 
+
   }
 }
+
+
+
+
