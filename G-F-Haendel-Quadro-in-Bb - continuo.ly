@@ -1,12 +1,12 @@
 \version "2.24.2"
 
-\header {
-  title = \markup{ \fontsize #8 "Quadro in Bb"}
-  subtitle = "for Violino Primo, Flauto o Oboe, Violino Secondo, Viola Obligato e Basso Continuo"
-  composer = \markup { \fontsize # 5 "G-F Haendel"}
-  arranger = "Tran{cr. X. Mayeur"
-  copyright = "Le{ Edition{ du Heron Melomane 2023"
-}
+\include "continuo_largo.ily"
+\include "continuo_allegro_I.ily"
+\include "continuo_adagio.ily"
+\include "continuo_allegro_final.ily"
+
+
+
 
 \paper {
   #(set-paper-size "a4")
@@ -20,41 +20,113 @@
 
 }
 
+\book {
+  \bookpart {
+    \include "../../copyright.ily"
+
+    \header {
+      title = \markup{ \fontsize #8 "Quadro in Bb"}
+      subtitle = "for Violino Primo, Flauto o Oboe, Violino Secondo, Viola Obligato e Basso Continuo"
+      composer = \markup { \fontsize # 5 "G-F Haendel"}
+      instrument = "Basso Continuo"
+    }
+    % LARGO PART
+    \score {
+      \header {
+        piece = \markup {  \fontsize #7 "Largo"}
+      }
+      <<
+
+        \new Staff \with {
+          instrumentName = "Basso"
+          midiInstrument = "cello"
+        } {\clef bass \cello_largo}
+
+        \new FiguredBass \figBass_largo
+      >>
+      \layout { }
+      \midi {
+        \tempo 4=50
+      }
+    }
+
+    % ALLEGRO FUGATO PART
 
 
-global = {
-  \key bes \major
-}
+    \score {
+      \header {
+        piece = \markup {  \fontsize #7 "Allegro Fugato"}
+      }
+
+      <<
+
+        \new Staff \with {
+          instrumentName = "Basse"
+          midiInstrument = "cello"
+        } {\clef bass \cello_allegro}
+
+        \new FiguredBass \figBass_allegro
 
 
-viola = \relative c' {
-  \global
-  % En avant la musique.
-
-}
-
-\include "continuo_largo.ily"
-
-
-
-celloPart = \new Staff \with {
-  instrumentName = "Basso"
-  midiInstrument = "cello"
-} {\clef bass \cello_largo}
-
-bassFiguresPart = \new FiguredBass \figBass_largo
-
-\score {
-  \header {
-    piece = \markup {  \fontsize #7 "Largo"}
+      >>
+      \layout { }
+      \midi {
+        \tempo 4=120
+      }
+    }
   }
-  <<
 
-    \celloPart
-    \bassFiguresPart
-  >>
-  \layout { }
-  \midi {
-    \tempo 4=50
+  \bookpart {
+    % ADAGIO PART
+
+
+    \score {
+      \header {
+        piece = \markup {  \fontsize #7 "Adagio"}
+      }
+
+      <<
+
+
+        \new Staff \with {
+          instrumentName = "Basse"
+          midiInstrument = "cello"
+        } \continuo_adagio
+
+        \new FiguredBass \figBass_adagio
+      >>
+      \layout { }
+      \midi {
+        \tempo 4=60
+      }
+    }
+
+
+    % ALLEGRO (final)
+
+    \score {
+      \header {
+        piece = \markup {  \fontsize #7 "Allegro"}
+      }
+
+      <<
+
+
+        \new Staff \with {
+          instrumentName = "Basse"
+          midiInstrument = "cello"
+        } \continuo_allegro_final
+
+        \new FiguredBass \figBass_allegro_final
+      >>
+      \layout { }
+      \midi {
+        \tempo 8=150
+      }
+    }
   }
 }
+
+
+
+

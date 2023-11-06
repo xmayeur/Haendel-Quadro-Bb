@@ -55,7 +55,7 @@ fluteAllegroFinal = \new Staff \with {
       subtitle = "for Violino Primo, Flauto o Oboe, Violino Secondo, Viola Obligato e Basso Continuo"
       composer = \markup { \fontsize # 5 "G-F Haendel"}
       arranger = "Tran{cr. X. Mayeur"
-      instrument = "FLAUTO"
+      instrument = "FLAUTO TRAVERSO"
 
     }
     \score {

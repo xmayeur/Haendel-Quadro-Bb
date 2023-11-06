@@ -16,7 +16,7 @@ cello_largo = \relative c' {
 }
 
 figBass_largo = \figuremode {
-  \global
+  \time 2/2
   % Ajouter des chiffrages ici.
   <_>1*16 <_>8*5 <6>8 <6 4> <7 5><_>4*7 <6 4>8 <7 5>
 

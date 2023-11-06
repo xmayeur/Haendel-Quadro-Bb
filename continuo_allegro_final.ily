@@ -46,9 +46,9 @@ figBass_allegro_final  = \figuremode {
   <_>4.*5 <_>8 <6 4>8 <7 5>8
 }
 
-\score {
-  <<
-    \new Staff \with {} \continuo_allegro_final
-    \new FiguredBass \figBass_allegro_final
-  >>
-}
+% \score {
+%   <<
+%   \new Staff \with {} \continuo_allegro_final
+%  \new FiguredBass \figBass_allegro_final
+%>>
+%}

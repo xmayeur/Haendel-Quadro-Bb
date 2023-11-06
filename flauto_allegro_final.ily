@@ -8,8 +8,10 @@ flauto_allegro_final = \relative c'' {
   \repeat volta 2 {
 
     bes4 r8 | bes 4 r8| bes 8. c16 d es| f8 bes, bes|  bes' a g | f es d | es \appoggiatura es d4-+|
-    \volta 1 {c4 r8}
-    \volta 2 {c4 r8}
+    \alternative {
+      \volta 1 {c4 r8}
+      \volta 2 {c4 r8}
+    }
 
   } \compressMMRests {R4.*5} | bes16(a bes) c-. a-. bes-. | c(bes c) d bes c| d8 c bes | f'16 es f g es f|
   g f g a f g| a g a bes g a | bes8 a g | fis e d| \compressMMRests R4.*4|d16(c d) es-. d,-. d'-.| c(bes c) d-. d,-. c'-.|

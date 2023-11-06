@@ -28,6 +28,8 @@ global = {
 
 %ALLEGRO (FINAL) PART
 \include "flauto_allegro_final.ily"
+\include "violin_allegro_final.ily"
+\include "viola_allegro_final.ily"
 \include "continuo_allegro_final.ily"
 
 
@@ -183,7 +185,15 @@ global = {
           midiInstrument = "flute"
         } \flauto_allegro_final
 
+        \new Staff \with {
+          instrumentName = "Violino"
+          midiInstrument = "violin"
+        } \violin_allegro_final
 
+        \new Staff \with {
+          instrumentName = "Viola"
+          midiInstrument = "viola"
+        } \viola_allegro_final
 
         \new Staff \with {
           instrumentName = "Basse"
@@ -194,7 +204,7 @@ global = {
       >>
       \layout { }
       \midi {
-        \tempo 4=120
+        \tempo 8=150
       }
     }
 
