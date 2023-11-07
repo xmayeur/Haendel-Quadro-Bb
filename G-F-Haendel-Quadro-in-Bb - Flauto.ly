@@ -56,7 +56,7 @@ fluteAllegroFinal = \new Staff \with {
       subtitle = "for Violino Primo, Flauto o Oboe, Violino Secondo, Viola Obligato e Basso Continuo"
       composer = \markup { \fontsize # 5 "G-F Haendel"}
       arranger = "Tran{cr. X. Mayeur"
-      instrument = "FLAUTO TRAVERSO"
+      instrument = "TRAVERSO"
 
     }
     \score {
@@ -85,10 +85,11 @@ fluteAllegroFinal = \new Staff \with {
   }
 
   \bookpart {
-
+    \header { instrument = "TRAVERSO"}
     \score {
       \header {
         piece = \markup {  \fontsize #7 "Adagio"}
+
       }
       \fluteAdagio
 

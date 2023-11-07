@@ -61,7 +61,7 @@
       <<
 
         \new Staff \with {
-          instrumentName = "Basse"
+          instrumentName = "Basso"
           midiInstrument = "cello"
         } {\clef bass \cello_allegro}
 
@@ -79,6 +79,7 @@
   \bookpart {
     % ADAGIO PART
 
+    \header { instrument = "Basso continuo"}
 
     \score {
       \header {

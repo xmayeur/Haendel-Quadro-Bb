@@ -20,13 +20,14 @@
 
     \line {
       {
-        \override #'(font-name ."Arial" )  "©  "
+
         \override #'(font-name . "Snell Roundhand" )
         \fontsize #2 {"2023  Les Éditions du Héron Mélomane"} \hspace #5
         \normal-size-sub \normal-size-sub \epsfile #Y #7 #"/Users/xavier/Documents/Scores/XMA.eps"
       }
     }
-    \line { \override #'(font-name ."Arial" ) \tiny "Copy allowed for non-commercial use - heron.melomane@mayeur.be"}
+    \line { \override #'(font-name ."Arial" ) \tiny "CC0 Public Domain - heron.melomane@mayeur.be"}
+    \line {\italic \abs-fontsize #8 "source: https://github.com/xmayeur/Haendel-Quadro-Bb"}
     \vspace #3
   }
 }

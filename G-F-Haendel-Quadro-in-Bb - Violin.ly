@@ -88,6 +88,7 @@ violin_allegro_final = \new Staff \with {
 
 
   \bookpart {
+    \header { instrument="Violino"}
 
     \score {
       \header {

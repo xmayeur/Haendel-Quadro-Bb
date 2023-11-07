@@ -88,7 +88,7 @@ viola_allegro_final = \new Staff \with {
 
 
   \bookpart {
-
+    \header { instrument = "VIOLA"}
     \score {
       \header {
         piece = \markup {  \fontsize #7 "Adagio"}
